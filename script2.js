@@ -1,13 +1,6 @@
-fetch ('google-books-search.json')
-    .then (res => res.json())
-    .then (data => {
-        const userInfoDiv = document.getElementById('info');
-        userInfoDiv.innerHTML = `
-            <p> Authors: ${data.authors}</p>
-            <p> Publisher: ${data.publisher}</p>
-            <p> Published Date: ${data.publishedDate}</p>
-            <p> Page count: ${data.pageCount}</p>
-        `;
-    })
+fetch ("https://www.googleapis.com/books/v1/volumes?q=modern%20web")
+    .then(res => res.json())
+    .then(console.log) 
+
     .catch(error => console.error('error', error));
 ;
