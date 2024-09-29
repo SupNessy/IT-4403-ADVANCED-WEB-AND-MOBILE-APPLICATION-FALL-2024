@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Details</title>
+  <link rel="stylesheet" type="text/css" href="style2.css">
+</head>
+<body>
+</head>
+<body>
+ <header>
+ <div id = "container">
+ <h1>
+     <h1>
+         <a href = "Home.html">Home</a>        
+         <a href = "Milestone1.html">Milestone1</a>
+         <a href = "Milestone2.html">Milestone2</a>
+         <a href = "Milestone3.html">Milestone3</a>
+         <a href = "Milestone4.html">Milestone4</a>
+ </h1>
+ </header>
+ </div>
+  <main>
+    <h1>Details</h1>
+    <div id="bookDetails"></div>
+  </main>
+
+  <script src="search.js"></script>
+  <script>
+ 
+    const bookDetailsDiv = document.getElementById('bookDetails');
+
+    const titleElement = document.createElement('h2');
+    titleElement.textContent =` Title: ${bookDetails}`;
+
+    const authorElement = document.createElement('p');
+    authorElement.textContent = `Author: ${bookDetails}`;
+
+    const descriptionElement = document.createElement('p');
+    descriptionElement.textContent = `Description: ${bookDetails}`;
+
+    bookDetailsDiv.appendChild(titleElement);
+    bookDetailsDiv.appendChild(authorElement);
+    bookDetailsDiv.appendChild(descriptionElement);
+  </script>
+</body>
+</html

@@ -75,4 +75,34 @@ img{
     margin: 10px;
 }
 
-
+.book {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .book a {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .book img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 5px;
+  }
+  
+  #bookDetails {
+    margin-top: 20px;
+  }
+  
+  #bookDetails h2 {
+    margin-bottom: 10px;
+  }
+  
+  #bookDetails p {
+    margin-bottom: 10px;
+  }
+  
