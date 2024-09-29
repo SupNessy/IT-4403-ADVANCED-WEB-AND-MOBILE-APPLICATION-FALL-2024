@@ -20,27 +20,27 @@
  </header>
  </div>
   <main>
-    <h1>Details</h1>
+    <h2>Details</h2>
     <div id="bookDetails"></div>
   </main>
 
   <script src="search.js"></script>
   <script>
  
-    const bookDetailsDiv = document.getElementById('bookDetails');
+    const DetailsDiv = document.getElementById('bookDetails');
 
-    const titleElement = document.createElement('h2');
-    titleElement.textContent =` Title: ${bookDetails}`;
+    const title = document.createElement('h2');
+    title.textContent =` Title: ${bookDetails}`;
 
-    const authorElement = document.createElement('p');
-    authorElement.textContent = `Author: ${bookDetails}`;
+    const author = document.createElement('p');
+    author.textContent = `Author: ${bookDetails}`;
 
-    const descriptionElement = document.createElement('p');
-    descriptionElement.textContent = `Description: ${bookDetails}`;
+    const description = document.createElement('p');
+    description.textContent = `Description: ${bookDetails}`;
 
-    bookDetailsDiv.appendChild(titleElement);
-    bookDetailsDiv.appendChild(authorElement);
-    bookDetailsDiv.appendChild(descriptionElement);
+    DetailsDiv.appendChild(title);
+    DetailsDiv.appendChild(author);
+    DetailsDiv.appendChild(description);
   </script>
 </body>
 </html

@@ -1,71 +1,71 @@
 
-function searchBooks() {
+function search() {
   const searchInput = document.getElementById('searchInput').value;
   const encodedSearchInput = encodeURIComponent(searchInput);
 
-  const url = `https://www.googleapis.com/books/v1/volumes?q=${encodedSearchInput}`;
+  const site = `https://www.googleapis.com/books/v1/volumes?q=${encodedSearchInput}`;
 
   
-  fetch(url)
+  fetch(site)
     .then(response => response.json())
-    .then(data => displaySearchResults(data.items))
+    .then(data => Results(data.items))
     .catch(error => console.log(error));
 }
 
 
-function displaySearchResults(books) {
-  const searchResultsDiv = document.getElementById('searchResults');
+function Results(books) {
+  const searchResultsDiv = document.getElementById('Results');
   searchResultsDiv.innerHTML = '';
 
   books.forEach(book => {
     const title = book.volumeInfo.title;
     const coverImage = book.volumeInfo.imageLinks?.smallThumbnail;
-    const bookId = book.id;
+    const Id = book.id;
 
-    const bookDiv = document.createElement('div');
-    bookDiv.classList.add('book');
+    const Div = document.createElement('div');
+    Div.classList.add('book');
 
     const titleLink = document.createElement('a');
     titleLink.textContent = title;
-    titleLink.href = `bookDetails.html?id=${bookId}`;
+    titleLink.href = `bookDetails.html?id=${Id}`;
 
     const coverImg = document.createElement('img');
     coverImg.src = coverImage;
     coverImg.alt = title;
 
-    bookDiv.appendChild(coverImg);
-    bookDiv.appendChild(titleLink);
-    searchResultsDiv.appendChild(bookDiv);
+    Div.appendChild(coverImg);
+    Div.appendChild(titleLink);
+    searchResultsDiv.appendChild(Div);
   });
 }
 
 
-function fetchBookDetails() {
+function FetchDetails() {
   const urlParams = new URLSearchParams(window.location.search);
   const bookId = urlParams.get('id');
-  const url = `https://www.googleapis.com/books/v1/volumes/${bookId}`;
+  const site = `https://www.googleapis.com/books/v1/volumes/${bookId}`;
 
-  fetch(url)
+  fetch(site)
     .then(response => response.json())
-    .then(data => displayBookDetails(data))
+    .then(data => DisplayDetails(data))
     .catch(error => console.log(error));
 }
 
 
-function bookDetails(book) {
-  const bookDetailsDiv = document.getElementById('bookDetails');
-  bookDetailsDiv.innerHTML = '';
+function Details(book) {
+  const DetailsDiv = document.getElementById('Details');
+  DetailsDiv.innerHTML = '';
 
-  const titleElement = document.createElement('h2');
-  titleElement.textContent = book.volumeInfo.title;
+  const title = document.createElement('h2');
+  title.textContent = book.volumeInfo.title;
 
-  const authorElement = document.createElement('p');
-  authorElement.textContent = `Author: ${book.volumeInfo.authors.join(', ')}`;
+  const author = document.createElement('p');
+  author.textContent = `Author: ${book.volumeInfo.authors.join(', ')}`;
 
-  const descriptionElement = document.createElement('p');
-  descriptionElement.textContent = book.volumeInfo.description;
+  const description = document.createElement('p');
+  description.textContent = book.volumeInfo.description;
 
-  bookDetailsDiv.appendChild(titleElement);
-  bookDetailsDiv.appendChild(authorElement);
-  bookDetailsDiv.appendChild(descriptionElement);
+  DetailsDiv.appendChild(title);
+  DetailsDiv.appendChild(author);
+  DetailsDiv.appendChild(description);
 }
