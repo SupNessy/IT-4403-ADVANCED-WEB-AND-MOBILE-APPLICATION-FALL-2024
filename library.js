@@ -1,8 +1,8 @@
-function press() {
+function click() {
     const button = document.getElementById('press');
     const encodedSearchInput = encodeURIComponent(button);
   
-    const site = `https://books.google.com/books/?hl=en&as_coll=0&num=10&uid=109928396846948382199&source=gbs_slider_cls_metadata_0_mylibrary_more`;
+    const site = `https://books.google.com/books?hl=en&as_coll=0&num=10&uid=109928396846948382199&source=gbs_slider_cls_metadata_0_mylibrary_title`;
   
     
     fetch(site)
