@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Adds in the font I wanted to use for the protject-->
+    <title>Home</title>
+    <link href="style3.css" rel = "Stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+</head>
+   <!---->  
+<body>
+    <header>
+         <!-- Adds in the links to the other pages-->
+    <div id = "container">
+    <h1>
+        <h1>
+            <a href = "Home.html">Home</a>        
+            <a href = "Milestone1.html">Milestone1</a>
+            <a href = "Milestone2.html">Milestone2</a>
+            <a href = "Milestone3.html">Milestone3</a>
+            <a href = "Milestone4.html">Milestone4</a>
+    </h1>
+    </header>
+    </div>
+   <!---->     
+    <h2>
+     <p>
+        <script src="BookSearch2.js"></script>   
+        <h2>Book Search</h2>
+        <input type="text" id="searchInput" placeholder="Please enter an book">
+        <button onclick="search()">Look Up</button>
+         </p>   
+        <div id="Results">
+            <script id="grid" type="x-tmpl-mustache">
+                <div class="grid">
+                  {{#books}}
+                  <div class="book-item" onclick="showDetails('{{id}}')">
+                    <img src="{{cover_image}}" alt="{{title}}">
+                    <h3>{{title}}</h3>
+                    <p>by {{author}}</p>
+                  </div>
+                  {{/books}}
+                </div>
+              </script>
+
+              <script id="list" type="x-tmpl-mustache">
+                <div class="list">
+                  {{#books}}
+                  <div class="item" onclick="showDetails('{{id}}')">
+                    <img src="{{cover_image}}" alt="{{title}}">
+                    <div>
+                      <h3>{{title}}</h3>
+                      <p>by {{author}}</p>
+                      <p>{{summary}}</p>
+                    </div>
+                  </div>
+                  {{/books}}
+                </div>
+              </script>
+
+              <script id="template1" type="x-tmpl-mustache">
+                <div class="details">
+                  <h2>{{title}}</h2>
+                  <img src="{{cover_image}}" alt="{{Name}}">
+                  <div>
+                    <h3>Author: {{author}}</h3>
+                    <p>{{full_description}}</p>
+                    <p>Publisher: {{publisher}}</p>
+                    <p>Pages: {{pages}}</p>
+                  </div>
+                </div>
+              </script>
+
+              <script id="template2" type="x-tmpl-mustache">
+                <div class="self">
+                  {{#bookshelf}}
+                  <div class="shelf-item">
+                    <img src="{{cover_image}}" alt="{{title}}">
+                    <h3>{{title}}</h3>
+                    <p>by {{author}}</p>
+                  </div>
+                  {{/bookshelf}}
+                </div>
+              </script>
+
+        </div>
+
+         <button onclick="search()">Page 1</button>
+            <button onclick="search()">Page 2</button>
+            <button onclick="search()">Page 3</button>
+            <button onclick="search()">Page 4</button>
+            <button onclick="search()">Page 5</button>
+   
+    </h2>
+</html>
