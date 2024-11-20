@@ -80,15 +80,15 @@ function search() {
   function toggle(viewType) {
     const data = { books: data }; 
     const templateId = viewType === 'grid' ? 'grid-template' : 'list-template';
-    renderTemplate(templateId, data, 'results-container');
+    renderTemplate(templateId, data, 'results');
   }
   
   function Details(Id) {
     const book = bookData.find(b => b.id === Id); 
-    render('template1', book, 'details-container');
+    render('template1', book, 'details');
   }
   
   function shelf() {
     const data = { bookshelf: bookshelfData };
-    render('template2', data, 'bookshelf-container');
+    render('template2', data, 'bookshelf');
   }
